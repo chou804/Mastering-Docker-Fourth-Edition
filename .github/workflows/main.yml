@@ -9,7 +9,7 @@ jobs:
         - uses: actions/checkout@v1
 
         - name: Build and tag image
-          run: docker build -t "docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')/multi-stage:$GITHUB_RUN_NUMBER" -f ./chapter02/consul-example/Dockerfile ./chapter02/consul-example/
+          run: docker build -t "docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')/consul-example:$GITHUB_RUN_NUMBER" -f ./chapter02/consul-example/Dockerfile ./chapter02/consul-example/
 
         - name: Docker login
           run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
